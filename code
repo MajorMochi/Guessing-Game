@@ -1,0 +1,20 @@
+import random
+
+if __name__=="__main__":
+    guess = False
+    high = 100
+    low = 0
+    print("Enter too high, too low or yes for each guess:")    
+    guess = random.randint(low, high)
+    while guess:
+        User_Input = input(f"does the number equal {guess}?")
+        if User_Input=="too high":
+            high= guess-1
+            guess = random.randint(low, high)
+        elif User_Input=="too low":
+            low=guess+1
+            guess=random.randint(low, high)
+        elif User_Input=="yes":
+            guess = True
+            print("I got it!")
+            break
